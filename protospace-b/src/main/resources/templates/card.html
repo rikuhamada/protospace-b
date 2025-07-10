@@ -2,13 +2,13 @@
   <!-- NEWアイコン -->
   <span class="new-icon" th:if="${#authorization.expression('isAuthenticated()') and !prototype.read}">NEW</span>
   <p class="timestamp_wrapper">
-    <!-- 絵文字 -->
-    <svg class="card_svg" width="10" height="10" viewBox="0 0 25 25">
-      <path d="M16.5 3.5l4 4L7 21H3v-4L16.5 3.5z" />
-    </svg>
-    <span class="timestamp_text" th:text="${#temporals.format(prototype.createdAt, 'yy/MM/dd')}"></span>
     <span class="timestamp_edited" th:if="${prototype.createdAt} != ${prototype.updatedAt}">
+      <!-- 絵文字 -->
+      <svg class="card_svg" width="10" height="10" viewBox="0 0 25 25">
+        <path d="M16.5 3.5l4 4L7 21H3v-4L16.5 3.5z" />
+      </svg>
     </span>
+    <span class="timestamp_text" th:text="${#temporals.format(prototype.createdAt, 'yy/MM/dd')}"></span>
   </p>
   <div class="card_img_wrapper">
     <a th:href="@{/prototypes/{prototypeId}/detail(prototypeId=${prototype.id})}">
