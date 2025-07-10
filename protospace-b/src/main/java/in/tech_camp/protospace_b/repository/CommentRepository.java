@@ -43,4 +43,8 @@ public interface CommentRepository {
     // コメント削除
     @Delete("DELETE FROM comments WHERE id = #{id}")
     void deleteById(Integer id);
+
+    // コメント取得
+    @Select("SELECT user_id FROM comments WHERE id = #{commentId}")
+    Integer findByCommentId(Integer commentId);
 }

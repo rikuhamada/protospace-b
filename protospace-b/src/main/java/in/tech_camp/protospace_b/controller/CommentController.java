@@ -94,6 +94,18 @@ public class CommentController {
             @RequestParam("commentId") Integer commentId,
             @AuthenticationPrincipal CustomUserDetail currentUser, Model model) {
 
+        // 投稿主・モデレーター・管理者以外は拒否
+        Integer commentUserId = commentRepository.findByCommentId(commentId);
+        System.out.println(commentUserId);
+        boolean isOwner = commentUserId.equals(currentUser.getId());
+        boolean isModeratorOrAdmin = 
+                "ROLE_MODERATOR".equals(currentUser.getUser().getRoleName()) ||
+                "ROLE_ADMIN".equals(currentUser.getUser().getRoleName());
+
+        if (!isOwner && !isModeratorOrAdmin) {
+            return "redirect:/";
+        }
+
         try {
             commentRepository.deleteById(commentId);
         } catch (Exception e) {

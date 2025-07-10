@@ -40,7 +40,8 @@ public class UserDetailController {
         Integer loginUserId = (currentUser != null) ? currentUser.getId() : null;
 
         // ユーザーの投稿一覧取得
-        List<PrototypeEntity> prototypes = tagService.tagBundle(prototypeShowRepository.showByUserId(loginUserId, userId));
+        List<PrototypeEntity> prototypes = tagService
+                .tagBundle(prototypeShowRepository.showByUserId(loginUserId, userId));
         Map<Boolean, List<PrototypeEntity>> partitioned = prototypes.stream()
                 .collect(Collectors.partitioningBy(prototype -> prototype.isPin()));
         List<PrototypeEntity> sortedByPinPrototypes = new ArrayList<>();
@@ -55,8 +56,8 @@ public class UserDetailController {
         }
 
         // ブックマーク取得
-        List<PrototypeEntity> bookmarkPrototypes = prototypes.stream().filter(prototype -> prototype.isBookmark())
-                .collect(Collectors.toList());
+        List<PrototypeEntity> bookmarkPrototypes = tagService
+                .tagBundle(prototypeShowRepository.showBookmarkedByUserId(loginUserId, userId));
         model.addAttribute("bookmarkPrototypes", bookmarkPrototypes);
 
         return "users/detail";

@@ -42,7 +42,9 @@
           </div>
 
           <!-- 削除ボタン -->
-          <th:block th:if="${userId == comment.user.id}">
+          <th:block th:if="${#authorization.expression('isAuthenticated()') and 
+            (#authentication?.principal?.id == comment.user.id or 
+            #authorization.expression('hasRole(''ROLE_MODERATOR'') or hasRole(''ROLE_ADMIN'')'))}">
             <form th:action="@{/prototypes/{prototypeId}/comment/delete(prototypeId=${prototype.id})}" method="post"
               class="delete-form" onsubmit="return confirm('本当に削除しますか?');">
               <input type="hidden" name="commentId" th:value="${comment.id}" />
