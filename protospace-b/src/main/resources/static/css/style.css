@@ -219,19 +219,30 @@ a {
   background-color: #f5f5f5;
 }
 
-.notification-btn{
+.notification-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 80%;
   padding: 0 3px;
-  margin-right: 10px;
   border: 1px #15a1f8 solid;
   border-radius: 3px;
   transition: 0.4s ease;
   background-color: #eaf5fe;
 }
+.notification-btn svg {
+  display: block;
+  width: 24px;
+  height: 24px;
+  stroke-width: 1;
+  stroke: #15a1f8;
+  fill: none;
+  transition: fill 0.3s;
+}
+.notification-btn:hover svg {
+  fill: #b3dbfa;
+}
 
-.notification-btn:hover {
-  background-color: #c9eaff;
-} 
 
 
 .close {

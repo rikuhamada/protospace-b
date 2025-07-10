@@ -133,18 +133,6 @@ label{
   text-decoration: underline;
 }
 
-/* ブックマークボタン */
-.bookmark-button {
-  font-weight: normal;
-  color: gray;
-}
-
-.defuse-bookmark-button {
-  font-weight: bold;
-  /* color: blue; */
-  color: rgb(48, 48, 218);
-}
-
 /* いいねボタン */
 .nice-button {
   font-weight: normal;
@@ -240,6 +228,26 @@ button.pin-off {
 }
 .defuse-bookmark-button:hover {
   background-color: #d97706;
+}
+
+.bookmark-button,
+.defuse-bookmark-button {
+  display: flex;
+  align-items: center;
+  gap: 2px; 
+}
+.bookmark-button svg {
+  margin-right: 2px;
+  flex-shrink: 0;
+  padding-bottom: 2px;
+}
+
+
+.defuse-bookmark-button svg {
+  margin-right: 2px;
+  flex-shrink: 0;
+  padding-bottom: 2px;
+  fill: white;
 }
 
 /* いいね数の表示 */
