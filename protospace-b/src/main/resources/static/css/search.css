@@ -59,8 +59,8 @@ input.search-box:-webkit-autofill {
 }
 
 .search-button:hover{
-  background-color: #d5ebff;
-  border:1px solid #4fbcff;
+  border:2px solid #4fbcff;
+  background-color: #f9f9f9;
 }
 
 .user-list {

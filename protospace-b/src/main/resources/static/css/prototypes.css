@@ -10,7 +10,7 @@
   flex-basis: 100%;
   box-sizing: border-box;
   padding: 0 12px;
-  border: 2px solid gray;
+  border: 2.2px solid #555;
   border-radius: 10px;
   overflow: hidden;
   background-color: #fff;
@@ -99,7 +99,7 @@
   aspect-ratio: 5 / 3;
   object-fit: cover;
   display: block;
-  border: solid 2px;
+  border: solid 2px gray;
 }
 
 /* カード内容のパディング */

@@ -271,5 +271,6 @@ button.pin-off {
 
 .tags-wrapper{
   border-bottom: 1px solid #999;
-  padding-bottom: 30px;
+  margin-top: 30px;
+  padding-bottom: 15px;
 }

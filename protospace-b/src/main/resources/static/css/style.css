@@ -66,11 +66,12 @@ img {
   align-items: center;
   padding: 5px 10px;
   margin-left: 10px;
-  font-size: 14px;
-  color: #15a1f8;
+  font-size: 17px;
+  font-weight: 500;
+  color: #52bafa;
   text-decoration: none;
   user-select: none;
-  border: 1px #15a1f8 solid;
+  border: 1.5px #35b0fc solid;
   border-radius: 3px;
   transition: 0.4s ease;
 }
@@ -225,7 +226,7 @@ a {
   justify-content: center;
   height: 80%;
   padding: 0 3px;
-  border: 1px #15a1f8 solid;
+  border: 1.5px #15a1f8 solid;
   border-radius: 3px;
   transition: 0.4s ease;
   background-color: #eaf5fe;
@@ -240,7 +241,7 @@ a {
   transition: fill 0.3s;
 }
 .notification-btn:hover svg {
-  fill: #b3dbfa;
+  fill: #cde9ff;
 }
 
 
